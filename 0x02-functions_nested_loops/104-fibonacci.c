@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* main - print first 98 Fibonacci numbers
+* main - print first 100 Fibonacci numbers
 *
 * Return: always 0
 */
@@ -13,7 +13,7 @@ unsigned long b = 2;
 unsigned long c = 3;
 
 printf("1, 2, ");
-for (i = 3; i <= 98; i++)
+for (i = 3; i <= 100; i++)
 {
 c = a + b;
 printf("%lu", c);
@@ -21,7 +21,7 @@ a = b;
 b = c;
 
 
-if (i < 98)
+if (i < 100)
 printf(", ");
 }
 printf("\n");
