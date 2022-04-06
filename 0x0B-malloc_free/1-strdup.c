@@ -12,11 +12,13 @@ char *pstr;
 unsigned int i = 0;
 
 if (str == 0)
-return (0);
+return (NULL);
 while (str[i] != 0)
 i++;
 i++;
 pstr = malloc(sizeof(char) * i);
+if(pstr == NULL) 
+return (NULL);
 for (i = 0; str[i] != 0; i++)
 pstr[i] = str[i];
 pstr[i] = 0;
