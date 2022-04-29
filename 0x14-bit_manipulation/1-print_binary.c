@@ -1,47 +1,29 @@
 #include "main.h"
 
 /**
- * print_binary - prints decimal as binary
- * @n: long integer
- */
-
+ *print_binary - prints any number in binary
+*@n: number to print
+*
+*Return: nothing, it's a void
+*/
 void print_binary(unsigned long int n)
 {
-signed long int size;
-char c;
-int flag;
+unsigned long int size;
+int size_bin;
+char num;
 
-size = sizeof(n) * 8 - 1;
-
-if (n == 0)
+size_bin = 0;
+size = n;
+while (size != 0)
 {
-_putchar("0");
-return;
+size = size >> 1;
+size_bin++;
 }
-
-if (n == 1)
+if (size_bin != 0)
+size_bin = size_bin - 1;
+for (; size_bin != -1; size_bin--)
 {
-_putchar("1");
-return;
-}
-
-flag = 0;
-
-while (size >= 0)
-{
-c = (n >> size) & 1;
-
-if (flag == 1)
-_putchar(c + '0');
-else
-{
-if (c == 1)
-{
-_putchar(c + '0');
-flag = 1;
-}
-}
-
-size -= 1;
+num = ((n >> size_bin) & 1) + '0';
+_putchar(num);
 }
 }
